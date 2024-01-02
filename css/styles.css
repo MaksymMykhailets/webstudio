@@ -30,11 +30,27 @@ button {
 input {
   font-family: inherit;
 }
-.section {
+/*.section {
   padding: 120px 0;
+}*/
+.section {
+  padding: 96px 0;
 }
-.footer {
+@media only screen and (min-width: 1158px) {
+  .section {
+    padding: 120px 0;
+  }
+}
+/*.footer {
   padding: 100px 0;
+}*/
+.footer {
+  padding: 97.5px 0;
+}
+@media only screen and (min-width: 1158px) {
+  .footer {
+    padding: 100px 0;
+  }
 }
 .visually-hidden {
   position: absolute;
@@ -50,10 +66,29 @@ input {
 }
 
 /* Common Styles */
-.container {
+
+/*.container {
   width: 1158px;
   padding: 0 15px;
   margin: 0 auto;
+}*/
+.container {
+  max-width: 320px;
+  padding: 0 16px;
+  margin: 0 auto;
+  outline: 2px solid red;
+  outline-offset: -2px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
 }
 .title,
 .list-title {
@@ -160,9 +195,6 @@ body {
 }
 
 /* Address */
-.address {
-  font-style: normal;
-}
 .contact-link {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #434455;
@@ -205,7 +237,6 @@ body {
   letter-spacing: 0.02em;
   margin-bottom: 49px;
 }
-
 .button {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
@@ -237,7 +268,8 @@ body {
   margin-bottom: 8px;
 }
 .benefits-icon-wrapper {
-  display: flex;
+  /*display: flex;*/
+  display: none;
   margin-bottom: 8px;
   width: 264px;
   height: 112px;
@@ -246,6 +278,11 @@ body {
   border-radius: 4px;
   border: 1px solid#8e8f99;
   background-color: #f4f4fd;
+}
+@media only screen and (min-width: 1158px) {
+  .benefits-icon-wrapper {
+    display: flex;
+  }
 }
 .benefits-icon {
   margin: 24px 0;
@@ -282,7 +319,15 @@ body {
 .team-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  /*gap: 24px;*/
+  gap: 70px;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .team-list {
+    gap: 24px;
+  }
 }
 .li-img {
   width: 264px;
@@ -321,6 +366,7 @@ body {
   align-items: center;
   gap: 24px;
 }
+/* Our Team + Mobile Menu */
 .elements {
   width: 40px;
   height: 40px;
@@ -343,6 +389,7 @@ body {
 .social-icon {
   fill: currentColor;
 }
+
 /* Portfolio */
 .op-title {
   margin-bottom: 72px;
@@ -357,9 +404,22 @@ body {
 .op-list {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 24px;
-  row-gap: 48px;
+  gap: 48px;
+  /*column-gap: 24px;
+  row-gap: 48px;*/
   background-color: #ffffff;
+}
+@media only screen and (min-width: 768px) {
+  .op-list {
+    column-gap: 24px;
+    row-gap: 72px;
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .op-list {
+    row-gap: 48px;
+  }
 }
 .op-img {
   width: 360px;
@@ -707,4 +767,74 @@ body {
 .modal-send:hover,
 .modal-send:focus {
   background-color: #404bbf;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 100%;
+  padding: 72px 16px 40px;
+  background-color: #fff;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 300ms ease, visibility 300ms ease;
+}
+.mobile-menu.is-open {
+  transform: translateX(0);
+  visibility: visible;
+}
+.mobile-menu .menu-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e7e9fc;
+  border-radius: 50%;
+}
+.mobile-menu-list {
+  margin-bottom: 168px;
+}
+.mobile-menu-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+.mobile-menu-link {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #2e2f42;
+}
+.mobile-menu-link.current {
+  color: #404bbf;
+}
+.mobile-menu-contacts {
+  margin-bottom: 48px;
+}
+.mobile-menu-contacts .mobile-menu-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+.mobile-menu-contact {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #434455;
+}
+.mobile-menu-contact.accent {
+  color: #4d5ae5;
+}
+.mobile-menu-icon-wrapper > .social-icon-list-mob {
+  display: flex;
+  gap: 40px;
 }
