@@ -114,6 +114,7 @@ body {
 /* Logo */
 .logo {
   margin-right: 76px;
+  padding: 17.5px 0;
   color: #4d5ae5;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -121,10 +122,13 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  text-decoration: none;
+}
+@media only screen and (min-width: 768px) {
+  .logo {
+    padding: 0;
+  }
 }
 .logo-dark {
-  margin-right: 76px;
   color: #2e2f42;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -132,6 +136,11 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+.logo,
+.logo-dark {
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Header */
@@ -146,22 +155,56 @@ body {
 }
 .header-nav {
   display: flex;
+  flex-grow: 1;
   align-items: center;
-  margin-right: auto;
+  /*margin-right: auto;*/
 }
-.logo,
-.logo-dark {
-  display: inline-flex;
+@media only screen and (min-width: 768px) {
+  .header-nav {
+    margin-right: auto;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .header-nav {
+    flex-grow: 0;
+  }
+}
+.header-btn {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
 }
+@media only screen and (min-width: 768px) {
+  .header-btn {
+    display: none;
+  }
+}
+
+/* Nav + Address */
 .nav-list,
 .address-list {
   display: flex;
   align-items: center;
   gap: 40px;
 }
-
-/* Nav */
+@media only screen and (max-width: 767.98px) {
+  .nav-list,
+  .address-list {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1157.8px) {
+  .address-list {
+    flex-direction: column;
+    gap: 12px;
+    margin-left: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+}
 .nav-link {
   display: block;
   padding-top: 24px;
@@ -261,13 +304,13 @@ body {
 /* Section Benefits */
 .text-list {
   /*display: flex;*/
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 72px;
   /*gap: 24px;*/
 }
 @media only screen and (min-width: 768px) {
   .text-list {
-    display: flex;
-    flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 72px;
   }
@@ -280,11 +323,9 @@ body {
 }
 .list-item {
   /*display: flex;*/
-  display: block;
   width: 100%;
   /*flex-direction: column;*/
   /*align-items: flex-start;*/
-  margin-bottom: 72px;
   justify-content: center;
   align-items: center;
 }
@@ -335,6 +376,12 @@ body {
   line-height: 1.11;
   letter-spacing: 0.02em;
   text-transform: capitalize;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .title {
+    text-align: left;
+  }
 }
 @media only screen and (min-width: 1158px) {
   .title {
@@ -539,10 +586,40 @@ body {
 }
 .footer-container {
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 72px;
+  /* align-items: baseline;*/
+}
+.footer-container:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 768px) and (max-width: 1157.98px) {
+  .footer-container {
+    display: flex;
+    text-align: left;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+    padding-left: 108px;
+    padding-right: 164px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .footer-container {
+    text-align: left;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 0;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .f-logo-wrapper {
+    margin-right: 120px;
+  }
 }
 .f-logo {
-  display: flex;
+  /*display: flex;*/
+  display: inline-block;
   color: #4d5ae5;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -550,10 +627,10 @@ body {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  text-decoration: none;
 }
 .logo-light {
-  display: flex;
+  /*display: flex*/
+  display: inline-block;
   color: #f4f4fd;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
@@ -569,17 +646,6 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
-.f-title {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-.f-logo-wrapper {
-  margin-right: 120px;
-}
 .f-social-icon-wrapper > .social-icon-list {
   display: flex;
   gap: 16px;
@@ -588,8 +654,18 @@ body {
 .footer .circle:focus {
   background-color: #31d0aa;
 }
-.footer-wrapper {
-  margin-left: auto;
+.f-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+@media only screen and (min-width: 1158px) {
+  .footer-wrapper {
+    margin-left: auto;
+  }
 }
 .wrapper-caption {
   margin-bottom: 16px;
@@ -603,6 +679,13 @@ body {
   display: flex;
   align-items: center;
   gap: 24px;
+}
+@media only screen and (max-width: 767.98px) {
+  .subscribe-form {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
 }
 .subscribe-form-field .subscribe-form-input {
   width: 264px;
@@ -676,12 +759,20 @@ body {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding-top: 72px;
   padding-bottom: 24px;
-  padding-left: 24px;
-  padding-right: 24px;
-  width: 408px;
-  min-height: 584px;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 288px;
+  min-height: 623px;
   border-radius: 4px;
   background: #fcfcfc;
+}
+@media only screen and (min-width: 768px) {
+  .modal {
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 408px;
+    min-height: 584px;
+  }
 }
 .modal-btn {
   position: absolute;
@@ -713,7 +804,7 @@ body {
 }
 .modal-caption {
   margin-bottom: 16px;
-  width: 360px;
+  width: 100%;
   color: #2e2f42;
   text-align: center;
   font-size: 16px;
