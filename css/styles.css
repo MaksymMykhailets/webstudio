@@ -263,14 +263,62 @@ button {
   background-position: center;
   background-size: cover;
 }
-@media only screen and (min-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .hero-section {
-    padding: 112px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-mob.jpg);
   }
 }
-@media only screen and (min-width: 1158px) {
+@media screen and (max-width: 767.98px) and (min-resolution: 192dpi) {
   .hero-section {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-mob@2x.jpg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-section {
+    max-width: 768px;
+    padding: 112px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-tab.jpg);
+  }
+}
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .hero-section {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-tab@2x.jpg);
+  }
+}
+@media screen and (min-width: 1158px) {
+  .hero-section {
+    max-width: 1440px;
     padding: 188px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-desk.jpg);
+  }
+}
+@media screen and (min-width: 1158px) and (min-resolution: 192dpi) {
+  .hero-section {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/people-office-desk@2x.jpg);
   }
 }
 .hero-title {
@@ -589,58 +637,81 @@ button {
 .footer {
   background-color: #2e2f42;
 }
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 72px;
-  /* align-items: baseline;*/
-}
-.footer-container:last-child {
-  margin-bottom: 0;
+@media only screen and (max-width: 767.98px) {
+  .footer {
+    text-align: center;
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1157.98px) {
   .footer-container {
+    padding: 0 108px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
     gap: 72px 24px;
-    padding-left: 108px;
-    padding-right: 164px;
   }
 }
 @media only screen and (min-width: 1158px) {
   .footer-container {
-    flex-wrap: nowrap;
-    align-items: baseline;
     gap: 0;
   }
+}
+@media only screen and (max-width: 767.98px) {
+  .f-logo-wrapper {
+    margin-bottom: 72px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .f-logo-wrapper {
+    max-width: 264px;
+  }
+}
+@media only screen and (min-width: 1158px) {
   .f-logo-wrapper {
     margin-right: 120px;
   }
 }
 .f-text {
-  margin-top: 16px;
-  width: 264px;
-  color: #f4f4fd;
+  margin-top: 17.5px;
+  color: #f4f4f4;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  text-align: left;
 }
-.f-social-icon-wrapper > .social-icon-list {
-  display: flex;
+@media only screen and (max-width: 767.98px) {
+  .f-social-icon-wrapper {
+    margin-bottom: 72px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .f-social-icon-wrapper {
+    margin-right: auto;
+  }
+}
+.footer .social-icon-list {
   gap: 16px;
+  justify-content: center;
 }
 .footer .circle:hover,
 .footer .circle:focus {
   background-color: #31d0aa;
 }
 .f-title {
-  font-weight: 500;
+  margin-bottom: 16px;
   font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #ffffff;
-  margin-bottom: 16px;
+  color: #fff;
 }
-@media only screen and (min-width: 1158px) {
+@media only screen and (min-width: 768px) {
   .footer-wrapper {
-    margin-left: auto;
+    max-width: 453px;
+    width: 100%;
   }
 }
 .wrapper-caption {
@@ -653,17 +724,19 @@ button {
 }
 .subscribe-form {
   display: flex;
-  align-items: center;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  justify-content: center;
 }
-@media only screen and (max-width: 767.98px) {
-  .subscribe-form {
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 16px;
+.subscribe-form-field {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .subscribe-form-field {
+    max-width: 264px;
   }
 }
-.subscribe-form-field .subscribe-form-input {
+.subscribe-form-input {
   width: 264px;
   height: 40px;
   padding: 8px 16px;
