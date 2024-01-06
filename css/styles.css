@@ -335,7 +335,7 @@ button {
 @media only screen and (max-width: 767.98px) {
   .hero-title {
     margin: 0 auto 72px;
-    max-width: 288px;
+    max-width: 220px;
     font-size: 36px;
     text-transform: capitalize;
   }
@@ -707,12 +707,6 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #fff;
-}
-@media only screen and (min-width: 768px) {
-  .footer-wrapper {
-    max-width: 453px;
-    width: 100%;
-  }
 }
 .wrapper-caption {
   margin-bottom: 16px;
